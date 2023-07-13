@@ -1,5 +1,5 @@
-# openjdk 1.8
-FROM openjdk:8-jdk-alpine3.9
+# openjdk 8
+FROM openjdk:8
 
 # 更新版本1
 MAINTAINER defnngj<defnngj@gmail.com>
