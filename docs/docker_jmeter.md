@@ -4,7 +4,7 @@
 
 在工作中经常需要对一些关键接口做高QPS的压测，JMeter是由Java 语言开发，没创建一个线程（虚拟用户），JVM默认会为每个线程分配1M的堆栈内存空间。受限于单台试压机的配置很难实现太高的并发。所以，通过JMeter实现分布式，可以整合多台主机的硬件资源，实现同时对被测试接口进行压力测试。
 
-![]()
+![](./imgs/jmeter.png)
 
 Jmeter分布式测试环境中有两个角色：Master 和 Slaves
 
@@ -29,9 +29,9 @@ $ brew install openjdk@11
 
 https://archive.apache.org/dist/jmeter/binaries/
 
-![](./imgs/jmeter.png)
-
 编写一个简单的脚本。
+
+![](./imgs/jmeter2.png)
 
 * docker: 通过doker创建容器。
 
@@ -52,9 +52,6 @@ runcare/jmeter-slave    latest     05c7ba96d97d   3 years ago     326MB
 
 请记住 jmeter-master 的镜像ID `e052a8cd8680`，后面会用到。
 
-* 通过 JMeter 编写压测脚本
-
-![](./imgs/jmeter2.png)
 
 
 ### 分布式压测使用
