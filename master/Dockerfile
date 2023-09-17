@@ -4,7 +4,7 @@ FROM openjdk:8
 # 更新版本1
 MAINTAINER defnngj<defnngj@gmail.com>
 
-ARG JMETER_VERSION="5.5"
+ARG JMETER_VERSION="5.6.2"
 ENV JMETER_HOME /opt/apache-jmeter-$JMETER_VERSION
 ENV JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
 ENV SSL_DISABLED true
