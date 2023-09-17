@@ -1,0 +1,33 @@
+version: '1'
+
+# https://docs.docker.com/compose/compose-file/
+# http://www.testautomationguru.com/jmeter-distributed-load-testing-using-docker/
+# srivaths.blogspot.com/2014/08/distrubuted-jmeter-testing-using-docker.html
+# http://jmeter.apache.org/usermanual/get-started.html#options
+# docker run -it -d --name slave01 defnngj/jmeter-slave
+services:
+  jmeter-slave01:
+    container_name: jmeter-slave01
+    image: defnngj/jmeter-slave:5.6.2
+  jmeter-slave02:
+    container_name: jmeter-slave02
+    image: defnngj/jmeter-slave:5.6.2
+  jmeter-master:
+    container_name: jmeter-master
+    image: defnngj/jmeter-master:5.6.2
+    ports:
+      - 60000
+    volumes:
+      - ./script:/data
+    entrypoint:
+      - /opt/apache-jmeter-5.6.2/bin/jmeter
+      - -n
+      - -t
+      - /data/baidu_script.jmx
+      - -l
+      - /data/reports/${RESULT}.jtl
+      - -j
+      - /data/reports/${RESULT}.log
+      - -e
+      - -o
+      - /data/reports/${RESULT}

@@ -97,3 +97,38 @@ drwxr-xr-x  6 fnngj  staff   192B  9 17 11:41 20230917114115
 进入`20230917114115` 目录，点击 index.html 文件，可以看到压测的结果。
 
 ![](./report.png)
+
+### docker compose 运行
+
+通过 docker compose 编排JMeter的运行更加简单。
+
+* 修改名称
+
+```bash  
+$ cat .env
+
+RESULT=result01
+```
+
+* 运行 docker compose
+
+```bash
+$ docker-compose up -d    
+[+] Building 0.0s (0/0)                                                                                                                                                                  
+[+] Running 3/3
+ ✔ Container jmeter-master   Started    0.4s 
+ ✔ Container jmeter-slave02  Running    0.0s 
+ ✔ Container jmeter-slave01  Running    0.0s 
+```
+
+* 查看结果
+
+```
+$ pwd
+.../github/docker-jmeter/script/reports
+
+$ ll
+drwxr-xr-x  6 fnngj  staff   192B  9 17 18:18 result01
+-rw-r--r--  1 fnngj  staff    11K  9 17 18:18 result01.jtl
+-rw-r--r--  1 fnngj  staff    20K  9 17 18:18 result01.log
+```
