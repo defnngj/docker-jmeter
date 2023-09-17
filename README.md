@@ -98,7 +98,7 @@ drwxr-xr-x  6 fnngj  staff   192B  9 17 11:41 20230917114115
 
 ![](./report.png)
 
-### docker compose 运行
+## docker compose 运行
 
 通过 docker compose 编排JMeter的运行更加简单。
 
@@ -132,3 +132,14 @@ drwxr-xr-x  6 fnngj  staff   192B  9 17 18:18 result01
 -rw-r--r--  1 fnngj  staff    11K  9 17 18:18 result01.jtl
 -rw-r--r--  1 fnngj  staff    20K  9 17 18:18 result01.log
 ```
+
+## 感谢
+
+本项目参考一下文章和项目，表示感谢！
+
+https://developer.aliyun.com/article/769520
+
+https://github.com/justb4/docker-jmeter
+
+https://github.com/apolloclark/jmeter
+
